@@ -3,8 +3,6 @@ layout: default
 title: "Happy Jekylling!"
 ---
 
-## ronron.co
-
 ```
  ____
 (.   \
