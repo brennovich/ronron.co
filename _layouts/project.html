@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
+  {%- include head.liquid -%}
+  <body>
+    {%- include header.liquid -%}
+
+    <section class="content">
+      {% assign cover_path = '/assets/images/posts/' | append: page.title | append: '/cover.jpg' %}
+      <div class="project-image">
+        <img src="{{ cover_path | relative_url }}" alt="{{ page.title }} - Cover">
+      </div>
+
+      {% assign post_images_path = '/assets/images/posts/' | append: page.title | append: '/' %}
+      {% assign numbered_images = site.static_files | where_exp: "file", "file.path contains post_images_path" | where_exp: "file", "file.path != cover_path" | sort: "path" %}
+      {% for image in numbered_images %}
+        <div class="project-image">
+          <img src="{{ image.path | relative_url }}" alt="{{ page.title }} - {{ image.name }}">
+        </div>
+      {% endfor %}
+    </section>
+  </body>
+</html>

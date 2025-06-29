@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
+  {%- include head.liquid -%}
+  <body>
+    {%- include header.liquid -%}
+
+    <section class="content">
+      {%- for post in site.posts -%}
+        <a href="{{ post.url | relative_url }}">
+          <img src="{{ '/assets/images/posts/' | append: post.title | append: '/cover.jpg' | relative_url }}" alt="{{ post.title }}">
+        </a>
+      {%- endfor -%}
+    </section>
+  </body>
+</html>

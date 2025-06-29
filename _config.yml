@@ -1,3 +1,27 @@
 url: "ronron.co"
 baseurl: ""
 title: "ronron.co"
+
+permalink: /:year/:month/:day/:title:output_ext
+
+future: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "project"
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - CNAME
