@@ -29,8 +29,8 @@ jobs:
           destination: ./_site
       - name: Validate HTML
         run: |
-          gem install html-proofer
-          htmlproofer ./_site
+          gem install --user-install html-proofer
+          $(ruby -e 'print Gem.user_dir')/bin/htmlproofer ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
