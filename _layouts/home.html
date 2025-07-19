@@ -4,12 +4,17 @@
   <body>
     {%- include header.liquid -%}
 
-    <section class="content">
-      {%- for post in site.posts -%}
-        <a href="{{ post.url | relative_url }}">
-          <img src="{{ '/assets/images/posts/' | append: post.title | append: '/cover.jpg' | relative_url }}" alt="{{ post.title }}">
-        </a>
-      {%- endfor -%}
-    </section>
+    <main class="content">
+      <h1>{{ page.title }}</h1>
+      <section class="projects-grid">
+        {%- for post in site.posts -%}
+          <article class="project-preview">
+            <a href="{{ post.url | relative_url }}">
+              <img src="{{ '/assets/images/posts/' | append: post.title | append: '/cover.jpg' | relative_url }}" alt="{{ post.title }}">
+            </a>
+          </article>
+        {%- endfor -%}
+      </section>
+    </main>
   </body>
 </html>

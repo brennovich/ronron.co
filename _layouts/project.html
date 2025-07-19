@@ -4,19 +4,32 @@
   <body>
     {%- include header.liquid -%}
 
-    <section class="content">
-      {% assign cover_path = '/assets/images/posts/' | append: page.title | append: '/cover.jpg' %}
-      <div class="project-image">
-        <img src="{{ cover_path | relative_url }}" alt="{{ page.title }} - Cover">
-      </div>
+    <main class="content">
+      <article class="project">
+        <header class="project-header">
+          <h1>{{ page.title }}</h1>
+        </header>
+        
+        <section class="project-gallery">
+          {% assign cover_path = '/assets/images/posts/' | append: page.title | append: '/cover.jpg' %}
+          <figure class="project-image project-cover">
+            <img src="{{ cover_path | relative_url }}" alt="{{ page.title }} - Cover">
+          </figure>
 
-      {% assign post_images_path = '/assets/images/posts/' | append: page.title | append: '/' %}
-      {% assign numbered_images = site.static_files | where_exp: "file", "file.path contains post_images_path" | where_exp: "file", "file.path != cover_path" | sort: "path" %}
-      {% for image in numbered_images %}
-        <div class="project-image">
-          <img src="{{ image.path | relative_url }}" alt="{{ page.title }} - {{ image.name }}">
-        </div>
-      {% endfor %}
-    </section>
+          {% assign post_images_path = '/assets/images/posts/' | append: page.title | append: '/' %}
+          {% assign numbered_images = site.static_files | where_exp: "file", "file.path contains post_images_path" | where_exp: "file", "file.path != cover_path" | sort: "path" %}
+          {% if numbered_images.size > 0 %}
+            <section class="project-additional-images">
+              <h2 class="visually-hidden">Additional Images</h2>
+              {% for image in numbered_images %}
+                <figure class="project-image">
+                  <img src="{{ image.path | relative_url }}" alt="{{ page.title }} - {{ image.name }}">
+                </figure>
+              {% endfor %}
+            </section>
+          {% endif %}
+        </section>
+      </article>
+    </main>
   </body>
 </html>
