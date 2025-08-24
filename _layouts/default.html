@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "de" }}">
   {%- include head.liquid -%}
+
   <body>
     {%- include header.liquid -%}
-    <main class="content">
-      {{ content }}
-    </main>
+
+    <main class="{{ post.styles | unshift: 'content' | join: ' ' }}"></main>
   </body>
 </html>
