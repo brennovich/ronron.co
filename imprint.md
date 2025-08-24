@@ -1,8 +1,6 @@
 ---
 layout: default
 title: "Imprint"
-styles:
-  - imprint
 ---
 
 ANGABEN GEMÄSS § 5 TM

@@ -5,6 +5,8 @@
   <body>
     {%- include header.liquid -%}
 
-    <main class="{{ page.styles | unshift: 'content' | join: ' ' }}"></main>
+    <main class="content {{ page.title | slugify }}">
+      {{ content }}
+    </main>
   </body>
 </html>
