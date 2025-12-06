@@ -1,0 +1,11 @@
+{% assign image_path = include.src %}
+{% assign image_alt = include.alt | default: include.title %}
+{% assign image_width = include.width | default: 800 %}
+{% assign image_loading = include.loading | default: 'lazy' %}
+{% assign image_class = include.class | default: 'responsive-image' %}
+
+<img src="{{ image_path | relative_url }}"
+     alt="{{ image_alt }}"
+     width="{{ image_width }}"
+     loading="{{ image_loading }}"
+     class="{{ image_class }}">

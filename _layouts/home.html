@@ -9,7 +9,9 @@
         {%- for post in site.posts -%}
           <article class="project-preview">
             <a href="{{ post.url | relative_url }}">
-              <img src="{{ '/assets/images/posts/' | append: post.title | append: '/cover.jpg' | relative_url }}" alt="{{ post.title }}">
+              <img src="{{ '/assets/images/posts/' | append: post.title | append: '/cover.jpg' | relative_url }}"
+                   alt="{{ post.description | default: post.title | append: ' project cover image' }}"
+                   loading="lazy">
             </a>
           </article>
         {%- endfor -%}

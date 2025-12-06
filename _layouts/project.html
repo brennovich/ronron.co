@@ -22,8 +22,15 @@
             <section class="project-additional-images">
               <h2 class="visually-hidden">Additional Images</h2>
               {% for image in numbered_images %}
+                {% assign image_number = forloop.index %}
+                {% assign image_description = page.image_descriptions[image_number] | default: 'Detail view' %}
                 <figure class="project-image">
-                  <img src="{{ image.path | relative_url }}" alt="{{ page.title }} - {{ image.name }}">
+                  <img src="{{ image.path | relative_url }}"
+                       alt="{{ page.title }} - {{ image_description }} (Image {{ image_number }} of {{ numbered_images.size }})"
+                       loading="lazy">
+                  {% if page.image_captions[image_number] %}
+                    <figcaption>{{ page.image_captions[image_number] }}</figcaption>
+                  {% endif %}
                 </figure>
               {% endfor %}
             </section>
