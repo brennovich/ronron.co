@@ -13,3 +13,6 @@ assets/images/**/*-thumbnail.*
 assets/images/**/*-small.*
 assets/images/**/*-medium.*
 assets/images/**/*-large.*
+
+# Git worktrees
+.worktrees/
