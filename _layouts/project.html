@@ -6,18 +6,13 @@
 
     <main class="content">
       <article class="project">
-        <header class="project-header">
-          <h1>{{ page.title }}</h1>
-        </header>
+        <h1>{{ page.title }}</h1>
         
         <section class="project-gallery">
           {%- assign cover_path = 'assets/images/posts/' | append: page.title | append: '/cover.jpg' -%}
           {%- assign cover_alt = page.title | append: ' - Cover' -%}
           <figure class="project-image project-cover">
-            {%- include responsive_image.liquid
-                path=cover_path
-                alt=cover_alt
-                link_original=true -%}
+            {%- include responsive_image.liquid path=cover_path alt=cover_alt -%}
           </figure>
 
           {% assign post_images_path = '/assets/images/posts/' | append: page.title | append: '/' %}
@@ -31,6 +26,7 @@
               {% endunless %}
             {% endunless %}
           {% endfor %}
+
           {% assign numbered_images = filtered_images | sort: "path" %}
           {% if numbered_images.size > 0 %}
             <section class="project-additional-images">
@@ -38,13 +34,13 @@
               {% for image in numbered_images %}
                 {% assign image_number = forloop.index %}
                 {% assign image_description = page.image_descriptions[image_number] | default: 'Detail view' %}
+
                 <figure class="project-image">
                   {%- assign image_path = image.path | remove_first: '/' -%}
                   {%- assign image_alt = page.title | append: ' - ' | append: image_description | append: ' (Image ' | append: image_number | append: ' of ' | append: numbered_images.size | append: ')' -%}
-                  {%- include responsive_image.liquid
-                      path=image_path
-                      alt=image_alt
-                      link_original=true -%}
+
+                  {%- include responsive_image.liquid path=image_path alt=image_alt -%}
+
                   {% if page.image_captions[image_number] %}
                     <figcaption>{{ page.image_captions[image_number] }}</figcaption>
                   {% endif %}

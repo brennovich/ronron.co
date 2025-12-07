@@ -8,6 +8,9 @@
     text-decoration: none;
     color: $theme-color;
     font-size: 1.8em;
+    padding-bottom: .1em;
+    display: inline-block;
+    line-height: 1;
 }
 
 .nav a:hover {

@@ -11,10 +11,7 @@
             <a href="{{ post.url | relative_url }}">
               {%- assign cover_path = 'assets/images/posts/' | append: post.title | append: '/cover.jpg' -%}
               {%- assign alt_text = post.description | default: post.title | append: ' project cover image' -%}
-              {%- include responsive_image.liquid
-                  path=cover_path
-                  alt=alt_text
-                  link_original=false -%}
+              {%- include responsive_image.liquid path=cover_path alt=alt_text -%}
             </a>
           </article>
         {%- endfor -%}
