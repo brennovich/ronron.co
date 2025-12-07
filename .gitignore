@@ -4,3 +4,12 @@ _site
 .jekyll-metadata
 vendor
 Gemfile.lock
+
+# Node.js
+node_modules/
+
+# Processed images (generated at build time)
+assets/images/**/*-thumbnail.*
+assets/images/**/*-small.*
+assets/images/**/*-medium.*
+assets/images/**/*-large.*

@@ -11,13 +11,27 @@
         </header>
         
         <section class="project-gallery">
-          {% assign cover_path = '/assets/images/posts/' | append: page.title | append: '/cover.jpg' %}
+          {%- assign cover_path = 'assets/images/posts/' | append: page.title | append: '/cover.jpg' -%}
+          {%- assign cover_alt = page.title | append: ' - Cover' -%}
           <figure class="project-image project-cover">
-            <img src="{{ cover_path | relative_url }}" alt="{{ page.title }} - Cover">
+            {%- include responsive_image.liquid
+                path=cover_path
+                alt=cover_alt
+                link_original=true -%}
           </figure>
 
           {% assign post_images_path = '/assets/images/posts/' | append: page.title | append: '/' %}
-          {% assign numbered_images = site.static_files | where_exp: "file", "file.path contains post_images_path" | where_exp: "file", "file.path != cover_path" | sort: "path" %}
+          {% assign cover_path_full = '/assets/images/posts/' | append: page.title | append: '/cover.jpg' %}
+          {% assign all_images = site.static_files | where_exp: "file", "file.path contains post_images_path" %}
+          {% assign filtered_images = "" | split: "" %}
+          {% for img in all_images %}
+            {% unless img.path contains '-thumbnail.' or img.path contains '-small.' or img.path contains '-medium.' or img.path contains '-large.' %}
+              {% unless img.path == cover_path_full %}
+                {% assign filtered_images = filtered_images | push: img %}
+              {% endunless %}
+            {% endunless %}
+          {% endfor %}
+          {% assign numbered_images = filtered_images | sort: "path" %}
           {% if numbered_images.size > 0 %}
             <section class="project-additional-images">
               <h2 class="visually-hidden">Additional Images</h2>
@@ -25,9 +39,12 @@
                 {% assign image_number = forloop.index %}
                 {% assign image_description = page.image_descriptions[image_number] | default: 'Detail view' %}
                 <figure class="project-image">
-                  <img src="{{ image.path | relative_url }}"
-                       alt="{{ page.title }} - {{ image_description }} (Image {{ image_number }} of {{ numbered_images.size }})"
-                       loading="lazy">
+                  {%- assign image_path = image.path | remove_first: '/' -%}
+                  {%- assign image_alt = page.title | append: ' - ' | append: image_description | append: ' (Image ' | append: image_number | append: ' of ' | append: numbered_images.size | append: ')' -%}
+                  {%- include responsive_image.liquid
+                      path=image_path
+                      alt=image_alt
+                      link_original=true -%}
                   {% if page.image_captions[image_number] %}
                     <figcaption>{{ page.image_captions[image_number] }}</figcaption>
                   {% endif %}

@@ -9,9 +9,12 @@
         {%- for post in site.posts -%}
           <article class="project-preview">
             <a href="{{ post.url | relative_url }}">
-              <img src="{{ '/assets/images/posts/' | append: post.title | append: '/cover.jpg' | relative_url }}"
-                   alt="{{ post.description | default: post.title | append: ' project cover image' }}"
-                   loading="lazy">
+              {%- assign cover_path = 'assets/images/posts/' | append: post.title | append: '/cover.jpg' -%}
+              {%- assign alt_text = post.description | default: post.title | append: ' project cover image' -%}
+              {%- include responsive_image.liquid
+                  path=cover_path
+                  alt=alt_text
+                  link_original=false -%}
             </a>
           </article>
         {%- endfor -%}
