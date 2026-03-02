@@ -1,16 +1,14 @@
 .nav {
     text-align: right;
-    text-transform: uppercase;
-    font-weight: bold;
+    text-transform: lowercase;
 }
 
 .nav a {
     text-decoration: none;
     color: $theme-color;
     font-size: 1.375em;
-    padding-bottom: .1em;
     display: inline-block;
-    line-height: 1;
+    line-height: 1.1em;
 }
 
 .nav a:hover {
