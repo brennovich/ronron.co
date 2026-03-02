@@ -2,19 +2,6 @@
 layout: default
 title: "Info"
 ---
-<br><br><br><br><br><br>
-A metaphor for the human condition,<br> a reflection of our shared experiences,<br> and a reminder that we are all in this together.<br><br><br>
-
-<img src="/assets/images/info-cat.svg"
-     alt="Illustration of a stylized cat in a jumping or playful pose, representing the creative spirit of ronron.co"
-     width="200"
-     height="284"
-     loading="lazy">
-
-Jumpy cat<br>
-
-
-
 **studio ronron** is a Berlin-based design practice led by furniture designer Hanna Fokken.<br>
 
 Trained as an architect at RWTH Aachen University, where she completed her Master’s degree, Hanna spent several years working in architectural offices across Europe before turning fully toward woodworking and furniture design. Seeking a deeper engagement with material and craft, she completed a professional training as a woodworker and earned her Gesellenschein.<br>
@@ -23,5 +10,12 @@ Today, she brings together architectural thinking and hands-on craftsmanship. He
 
 For collaborations, commissions, or conversations about future projects, feel free to get in touch. <br>
 
+<br>
+<img src="/assets/images/info-cat.svg"
+     alt="Illustration of a stylized cat in a jumping or playful pose, representing the creative spirit of ronron.co"
+     width="200"
+     height="284"
+     loading="lazy">
+<br>
 
 [Imprint](./imprint)

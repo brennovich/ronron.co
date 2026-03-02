@@ -23,7 +23,15 @@ header.main {
 .content {
     grid-row: 2;
     grid-column: 1 / span 6;
-    padding: 0 0.5em 0.5em 0.5em;
+    padding: .5em;
+}
+
+.info {
+    padding-top: 3em;
+
+    img {
+        margin-left: 2em;
+    }
 }
 
 .projects-grid {
