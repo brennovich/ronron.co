@@ -16,6 +16,12 @@ For collaborations, commissions, or conversations about future projects, feel fr
      width="200"
      height="284"
      loading="lazy">
+
+<br>
+<br>
+<br>
 <br>
 
-[Imprint](./imprint)
+<p style="text-align:right;">
+    <a href="/imprint">Imprint</a>
+</p>

@@ -28,6 +28,7 @@ header.main {
 
 .info {
     padding-top: 3em;
+    max-width: 680px;
 
     img {
         margin-left: 2em;
@@ -45,6 +46,7 @@ header.main {
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
+        margin-right: 11em;
     }
 }
 
