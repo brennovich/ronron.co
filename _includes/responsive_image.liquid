@@ -8,11 +8,13 @@
   Context is automatically inferred from page.layout (home vs project)
 {%- endcomment -%}
 
-{%- assign path_without_ext = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' -%}
 {%- assign original_url = include.path | relative_url -%}
 
-{%- if page.layout == 'home' -%}
-  {%- comment -%} Home page: thumbnail (1x) and small (2x) for retina {%- endcomment -%}
+{%- if include.path contains '.gif' -%}
+  <img src="{{ original_url }}" alt="{{ include.alt }}" loading="lazy">
+
+{%- elsif page.layout == 'home' -%}
+  {%- assign path_without_ext = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' -%}
   {%- assign thumbnail_webp = path_without_ext | append: '-thumbnail.webp' | relative_url -%}
   {%- assign thumbnail_jpg = path_without_ext | append: '-thumbnail.jpg' | relative_url -%}
   {%- assign small_webp = path_without_ext | append: '-small.webp' | relative_url -%}
@@ -25,7 +27,7 @@
   </picture>
 
 {%- else -%}
-  {%- comment -%} Project page: medium (1x) and large (2x) for retina {%- endcomment -%}
+  {%- assign path_without_ext = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' -%}
   {%- assign medium_webp = path_without_ext | append: '-medium.webp' | relative_url -%}
   {%- assign medium_jpg = path_without_ext | append: '-medium.jpg' | relative_url -%}
   {%- assign large_webp = path_without_ext | append: '-large.webp' | relative_url -%}
