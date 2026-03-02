@@ -1,19 +1,23 @@
 .logo {
-  cursor: pointer;
-  padding-top: .2em;
-  padding-bottom: .3em;
-
-  &:hover {
-    @include hover-text;
-  }
-
-  &:active {
-    @include active-text;
-  }
+    cursor: pointer;
 }
 
 
 .logo a {
     display: block;
     cursor: pointer;
+}
+
+.logo img {
+    height: 1.175rem;
+    width: auto;
+    padding-bottom: .175em;
+
+    &:hover {
+      @include hover-text;
+    }
+
+    &:active {
+      @include active-text;
+    }
 }
