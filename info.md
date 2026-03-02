@@ -11,15 +11,15 @@ A metaphor for the human condition,<br> a reflection of our shared experiences,<
      height="284"
      loading="lazy">
 
-Jumpy cat<br>
+Jumpy cat<br><br><br><br>
 
 
 
-**studio ronron** is a Berlin-based design practice led by furniture designer Hanna Fokken.<br>
+**studio ronron** is a Berlin-based design practice led by furniture designer Hanna Fokken.<br><br>
 
-Trained as an architect at RWTH Aachen University, where she completed her Master’s degree, Hanna spent several years working in architectural offices across Europe before turning fully toward woodworking and furniture design. Seeking a deeper engagement with material and craft, she completed a professional training as a woodworker and earned her Gesellenschein.<br>
+Trained as an architect at RWTH Aachen University, where she completed her Master’s degree, Hanna spent several years working in architectural offices across Europe before turning fully toward woodworking and furniture design. Seeking a deeper engagement with material and craft, she completed a professional training as a woodworker and earned her Gesellenschein.<br><br>
 
-Today, she brings together architectural thinking and hands-on craftsmanship. Her work moves between structure and tactility, precision and curiosity — exploring objects, spaces, and materials with a playful yet rigorous approach.<br>
+Today, she brings together architectural thinking and hands-on craftsmanship. Her work moves between structure and tactility, precision and curiosity — exploring objects, spaces, and materials with a playful yet rigorous approach.<br><br>
 
 For collaborations, commissions, or conversations about future projects, feel free to get in touch. <br>
 
