@@ -10,7 +10,7 @@ Today, she brings together architectural thinking and hands-on craftsmanship. He
 
 For collaborations, commissions, or conversations about future projects, feel free to get in touch.
 
-<br>
+<br><br>
 <img src="/assets/images/info-cat.svg"
      alt="Illustration of a stylized cat in a jumping or playful pose, representing the creative spirit of ronron.co"
      width="200"
