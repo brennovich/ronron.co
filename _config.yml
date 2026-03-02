@@ -26,3 +26,6 @@ exclude:
   - vendor/ruby/
   - CNAME
   - docs
+  - README.md
+  - LICENSE
+  - CLAUDE.md
