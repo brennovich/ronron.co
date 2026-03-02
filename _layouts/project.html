@@ -31,16 +31,15 @@
               <h2 class="visually-hidden">Additional Images</h2>
               {% for image in numbered_images %}
                 {% assign image_number = forloop.index %}
-                {% assign image_description = page.image_descriptions[image_number] | default: 'Detail view' %}
 
                 <figure class="project-image">
                   {%- assign image_path = image.path | remove_first: '/' -%}
-                  {%- assign image_alt = page.title | append: ' - ' | append: image_description | append: ' (Image ' | append: image_number | append: ' of ' | append: numbered_images.size | append: ')' -%}
+                  {%- assign image_alt = page.title | append: ' - Image ' | append: image_number | append: ' of ' | append: numbered_images.size -%}
 
                   {%- include responsive_image.liquid path=image_path alt=image_alt -%}
 
                   {% if page.image_captions[image_number] %}
-                    <figcaption>{{ page.image_captions[image_number] }}</figcaption>
+                    <figcaption class="visually-hidden">{{ page.image_captions[image_number] }}</figcaption>
                   {% endif %}
                 </figure>
               {% endfor %}

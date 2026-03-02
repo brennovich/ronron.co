@@ -68,6 +68,11 @@ header.main {
     margin: 0;
 }
 
+.project-additional-images {
+    display: grid;
+    gap: 1rem;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
