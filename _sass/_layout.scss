@@ -23,7 +23,7 @@ header.main {
 .content {
     grid-row: 2;
     grid-column: 1 / span 6;
-    padding: .5em;
+    padding: .5em 1em;
 }
 
 .info {
@@ -52,6 +52,7 @@ header.main {
 
 .project-preview {
     display: block;
+    max-width: 640px;
 
     picture,
     img {
@@ -62,6 +63,10 @@ header.main {
 .project-gallery {
     display: grid;
     gap: 1rem;
+
+    @media (min-width: 1024px) {
+        margin-right: 11em;
+    }
 }
 
 .project-image {

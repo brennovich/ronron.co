@@ -42,12 +42,12 @@ bundle exec jekyll serve        # Start development server at http://localhost:4
 ### Image Processing System
 Images use a build-time processing pipeline powered by Sharp (Node.js):
 - **Source images**: Original `.jpg`/`.jpeg`/`.png` files in `assets/images/posts/`
-- **Generated variants**: Four sizes (thumbnail: 300px, small: 640px, medium: 1024px, large: 1920px)
-- **Format outputs**: Both WebP and JPEG for each size (8 files per source image)
+- **Generated variants**: Three sizes (small: 640px, medium: 1024px, large: 1920px)
+- **Format outputs**: Both WebP and JPEG for each size (6 files per source image)
 - **Naming convention**: `{basename}-{size}.{format}` (e.g., `cover-medium.webp`)
 - **Responsive serving**: `_includes/responsive_image.liquid` generates `<picture>` elements with:
-  - Home context: thumbnail (1x) and small (2x) for retina
-  - Project context: medium (1x) and large (2x) for retina
+  - Home context: small (1x) and medium (2x) for retina
+  - Project context: large for all displays
 - **Processed images are gitignored** and regenerated on each deployment
 
 ### Styling Architecture

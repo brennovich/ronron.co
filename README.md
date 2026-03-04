@@ -46,10 +46,9 @@ Minimal portfolio website showcasing projects through image galleries.
 ### Image Processing
 
 Images are processed at build time using Sharp to generate multiple sizes:
-- **thumbnail**: 300px (for home page)
-- **small**: 640px (for retina home page)
-- **medium**: 1024px (for project pages)
-- **large**: 1920px (for retina project pages)
+- **small**: 640px (for home page)
+- **medium**: 1024px (for retina home page)
+- **large**: 1920px (for project pages)
 
 Each size is generated in both WebP and JPEG formats for optimal browser support.
 

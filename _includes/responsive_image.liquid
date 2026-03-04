@@ -15,14 +15,14 @@
 
 {%- elsif page.layout == 'home' -%}
   {%- assign path_without_ext = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' -%}
-  {%- assign thumbnail_webp = path_without_ext | append: '-thumbnail.webp' | relative_url -%}
-  {%- assign thumbnail_jpg = path_without_ext | append: '-thumbnail.jpg' | relative_url -%}
   {%- assign small_webp = path_without_ext | append: '-small.webp' | relative_url -%}
   {%- assign small_jpg = path_without_ext | append: '-small.jpg' | relative_url -%}
+  {%- assign medium_webp = path_without_ext | append: '-medium.webp' | relative_url -%}
+  {%- assign medium_jpg = path_without_ext | append: '-medium.jpg' | relative_url -%}
 
   <picture>
-    <source srcset="{{ thumbnail_webp }} 1x, {{ small_webp }} 2x" type="image/webp">
-    <source srcset="{{ thumbnail_jpg }} 1x, {{ small_jpg }} 2x" type="image/jpeg">
+    <source srcset="{{ small_webp }} 1x, {{ medium_webp }} 2x" type="image/webp">
+    <source srcset="{{ small_jpg }} 1x, {{ medium_jpg }} 2x" type="image/jpeg">
     <img src="{{ small_jpg }}" alt="{{ include.alt }}" loading="lazy">
   </picture>
 
@@ -35,8 +35,8 @@
 
   <a href="{{ original_url }}" target="_blank">
     <picture>
-      <source srcset="{{ medium_webp }} 1x, {{ large_webp }} 2x" type="image/webp">
-      <source srcset="{{ medium_jpg }} 1x, {{ large_jpg }} 2x" type="image/jpeg">
+      <source srcset="{{ large_webp }}" type="image/webp">
+      <source srcset="{{ large_jpg }}" type="image/jpeg">
       <img src="{{ large_jpg }}" alt="{{ include.alt }}" loading="lazy">
     </picture>
   </a>

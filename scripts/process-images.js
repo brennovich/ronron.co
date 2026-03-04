@@ -4,7 +4,6 @@ const path = require('path');
 
 // Configuration
 const SIZES = {
-  thumbnail: 300,
   small: 640,
   medium: 1024,
   large: 1920
