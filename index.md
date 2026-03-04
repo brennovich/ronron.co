@@ -1,4 +1,4 @@
 ---
 layout: home
-title: "Miau"
+title: Home
 ---
