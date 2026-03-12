@@ -1,7 +1,7 @@
 body {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, minmax(2em, auto));
+    grid-template-rows: auto 1fr;
 }
 
 header.main {
@@ -26,7 +26,7 @@ header.main {
     padding: .5em 1em;
 }
 
-.info {
+.info, .imprint {
     padding-top: 3em;
     max-width: 680px;
 
@@ -39,20 +39,48 @@ header.main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+
+    &.is-ready {
+        opacity: 1;
+    }
 
     @media (min-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+
+        .project-preview {
+            grid-column: span 2;
+
+            &:nth-child(7n+1) { grid-column: span 3; }
+            &:nth-child(7n+2) { grid-column: span 1; margin-top: 2rem; }
+            &:nth-child(7n+3) { grid-column: span 1; margin-top: -1rem; }
+            &:nth-child(7n+4) { grid-column: span 3; }
+            &:nth-child(7n+5) { grid-column: span 3; margin-top: 1.5rem; }
+            &:nth-child(7n+6) { grid-column: span 1; }
+            &:nth-child(7n+7) { margin-top: 1.5rem; }
+        }
     }
 
     @media (min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         margin-right: 11em;
+
+        .project-preview {
+            grid-column: span 3;
+
+            &:nth-child(7n+2) { margin-top: 2.5rem; }
+            &:nth-child(7n+3) { grid-column: span 2; margin-top: -1rem; }
+            &:nth-child(7n+4) { grid-column: span 4; margin-top: 0; }
+            &:nth-child(7n+5) { grid-column: span 4; margin-top: 1.5rem; }
+            &:nth-child(7n+6) { grid-column: span 2; margin-top: 0; }
+            &:nth-child(7n+7) { margin-top: 2rem; }
+        }
     }
 }
 
 .project-preview {
     display: block;
-    max-width: 640px;
 
     picture,
     img {

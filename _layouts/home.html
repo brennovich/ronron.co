@@ -20,5 +20,17 @@
           </article>
       </section>
     </main>
+
+    <script>
+      const grid = document.querySelector('.projects-grid');
+      const items = Array.from(grid.querySelectorAll('.project-preview'));
+      const last = items.pop();
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+      items.forEach(item => grid.insertBefore(item, last));
+      grid.classList.add('is-ready');
+    </script>
   </body>
 </html>
