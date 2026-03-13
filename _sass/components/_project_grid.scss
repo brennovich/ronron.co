@@ -1,0 +1,27 @@
+.projects-grid {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+
+    &.is-ready {
+        opacity: 1;
+    }
+}
+
+.project-preview {
+    display: block;
+    transition: transform .3s ease-in;
+
+    &:hover {
+        transition: transform .1s ease-in;
+        transform: translate(.15rem, .15rem);
+    }
+
+    &:active {
+        transform: translate(.3rem, .3rem);
+    }
+
+    picture,
+    img {
+        width: 100%;
+    }
+}
